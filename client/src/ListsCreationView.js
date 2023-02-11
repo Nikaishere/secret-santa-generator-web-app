@@ -67,12 +67,17 @@ export default function ListsCreationView() {
 	};
 	//The useEffect can be called only once and automatically loads.
 	//useEffect to get entire list, then check with console.log(list[-1]) to access last item submitted
-	useEffect(() => {
-		const getLastList = async () => {
-			let response = await fetch("/create");
-			let data = await response.json();
-			setAddList(data);
-		};
+	const getLastList = async () => {
+		let response = await fetch("/create");
+		let data = await response.json();
+		setAddList(data);
+	};
+	
+	
+	
+	
+	/*useEffect(() => {
+		
 		getLastList();
 		/* fetch(`http://localhost:5000/create`)
 			.then(res => res.json())
@@ -86,7 +91,7 @@ export default function ListsCreationView() {
 				console.log(err);
 				setError(`Oops! Couldn't get the presents list. ${err.message}`);
 			}); */
-	}, []); //putting the info inside of the empty array
+	//putting the info inside of the empty array
 
 	//this is for add more presents
 	const handleSubmit2 = event => {
@@ -119,7 +124,7 @@ export default function ListsCreationView() {
 			<div>
 				<h2>Start your list</h2>
 			</div>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<div>
 					<label>Name: </label>
 					<input name="name" onChange={handleInputChange} value={list.name} placeholder="Your name" />
@@ -148,10 +153,10 @@ export default function ListsCreationView() {
 						/>
 					</div>
 				</section>
-				<button onClick={() => handleSubmit()} type="submit" className="submit-button">
+				<button type="submit" className="submit-button">
 					Submit
 				</button>
-				<button onClick={() => handleSubmit2()} type="click" className="add-more">
+				<button onClick={ handleSubmit2 } type="click" className="add-more">
 					Add more presents
 				</button>
 			</form>
