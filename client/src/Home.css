@@ -6,7 +6,28 @@
 
 body {
     font-family: 'Gloria Hallelujah', cursive;
+    background-image: url("/public/header-image.jpg");
+    background-size:cover;
+    margin: auto;
+  
+   
+    background-repeat:no-repeat;
+}
+
+.button-container {
+height:300px;
+margin: auto;
+justify-content: center;
 }
 
 
-/*color: linear-gradient(to left, #553c9a, #b393d3);;*/
+
+
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+

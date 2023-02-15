@@ -31,9 +31,9 @@ export default function PresentView() {
 					<h2>{list.owner}</h2>
 					<h3>{list.name}</h3>
 					<h3>{list.presents[0].name}</h3>
-					<a href={list.presents[0].url} target="_blank">
+					<img src={list.presents[0].url} >
 						{list.presents[0].url}
-					</a>
+					</img>
 				</div>
 			) : null}
 			{error ? <h2>{error}</h2> : null}

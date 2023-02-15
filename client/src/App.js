@@ -10,7 +10,7 @@ function App() {
 	return (
 		<div>
 			<header className="page-header">
-				<h1 className="header-title">Wishlist Generator</h1>
+				
 			</header>
 			<main className="main-content">
 				<Router>

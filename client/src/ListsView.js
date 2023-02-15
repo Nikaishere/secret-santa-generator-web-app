@@ -22,9 +22,9 @@ export default function ListsView() {
 			<h1>I work</h1>
 			{lists.map(list => (
 				<div key={list.id}>
-					<a href={`/view-presents?list_id=${list.id}`}>
-						{list.name} - {list.owner}
-					</a>
+					<img alt= 'image of present' src={`/view-presents?list_id=${list.url.value}`}>
+						{list.name} - {list.owner} 
+					</img>
 				</div>
 			))}
 			{error ? <h1>{error}</h1> : null}
