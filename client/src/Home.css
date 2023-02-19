@@ -6,22 +6,43 @@
 
 body {
     font-family: 'Gloria Hallelujah', cursive;
-    background-image: url("/public/header-image.jpg");
-    background-size:cover;
     margin: auto;
-  
-   
-    background-repeat:no-repeat;
+
 }
 
 .button-container {
-height:300px;
-margin: auto;
-justify-content: center;
+    height: 300px;
+    margin: auto;
+    justify-content: center;
 }
 
+.header-image {
+   height:50%;
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.sub-title{
+    text-align:start;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FB6376; 
+}
 
+.button-container {
+    height: 200px;
+  position: relative;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-250%, -80%);
 
+}
 
 
 @tailwind base;
@@ -29,5 +50,3 @@ justify-content: center;
 @tailwind components;
 
 @tailwind utilities;
-
-

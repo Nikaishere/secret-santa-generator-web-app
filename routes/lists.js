@@ -52,7 +52,19 @@ router.post("/create", async (req, res) => {
   await db(
     `INSERT INTO presents (name, url, list_id) VALUES ("${presentName}", "${url}", ${insertId});`
   );
-  res.send( {listId: insertId});
+  res.send({ listId: insertId });
+});
+router.delete("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    await db(`delete from presents where list_id = ${id}`);
+    await db(`delete from lists where id = ${id}`);
+    
+    res.send(200);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 module.exports = router;

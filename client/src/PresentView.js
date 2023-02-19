@@ -23,6 +23,26 @@ export default function PresentView() {
 	}, []);
 	console.log(list);
 	//console.log(list.presents[0].name);
+
+   const deletePresent = async id => {
+		try {
+		  await fetch(`http://localhost:5000/lists/delete/${id}`, {
+			method: "DELETE",
+			headers: {
+			  "Content-Type": "application/json"
+			},
+			
+		  });
+		  setList(null);
+		  
+		} catch (error) {
+		  setError("Try again later");
+		} 
+	  };
+	
+
+	
+
 	return (
 		<div>
 			<h2>View presents</h2>
@@ -31,10 +51,19 @@ export default function PresentView() {
 					<h2>{list.owner}</h2>
 					<h3>{list.name}</h3>
 					<h3>{list.presents[0].name}</h3>
-					<img src={list.presents[0].url} >
-						{list.presents[0].url}
-					</img>
+					<img alt={list.presents[0].name} src={list.presents[0].url} />
+					<div>
+						<button onClick={() => deletePresent(id)} className="delete_button">Delete
+
+						</button>
+						</div>
+					
+	
 				</div>
+
+				
+				
+				
 			) : null}
 			{error ? <h2>{error}</h2> : null}
 		</div>
